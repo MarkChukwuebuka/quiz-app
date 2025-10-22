@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Quiz Master - Dynamic Quiz Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive quiz game built with React that tests your knowledge across various topics.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Dynamic Question Loading**: Fetches questions from Open Trivia DB API with offline fallback
+- **Real-time Feedback**: Instant visual feedback on answer correctness
+- **Score Tracking**: Live score display and comprehensive results
+- **Timer System**: 15-second countdown per question
+- **Leaderboard**: Top 10 high scores saved locally
+- **Responsive Design**: Optimized for all screen sizes
+- **Error Handling**: Graceful fallback for API failures
 
-### `npm start`
+## Installation
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd quiz-game
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Install dependencies
+npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Start development server
+npm start
+```
 
-### `npm test`
+## How to Play
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Enter your name on the start screen
+2. Click "Start Quiz" to begin
+3. Answer each question within 15 seconds
+4. Select your answer by clicking on an option
+5. Get instant feedback (green = correct, red = incorrect)
+6. View your final score and leaderboard ranking
+7. Click "Play Again" to restart
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React** (Hooks: useState, useEffect)
+- **Tailwind CSS** for styling
+- **Lucide React** for icons
+- **Open Trivia DB API** for questions
+- **LocalStorage** for leaderboard persistence
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
+```
+quiz-game/
+├── src/
+│   ├── App.js          # Main quiz component
+│   ├── index.js        # Entry point
+│   └── index.css       # Tailwind imports
+├── public/
+├── package.json
+└── README.md
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Game Logic
 
-### `npm run eject`
+- 10 questions per game
+- 4 multiple choice options per question
+- 15 seconds to answer each question
+- 1 point per correct answer
+- Timer automatically moves to next question at 0
+- Leaderboard saves top 10 scores
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Error Handling
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- API failures fallback to local question set
+- Invalid data handled gracefully
+- Leaderboard errors don't break the game
+- Missing player names prevented at start
