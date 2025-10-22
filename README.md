@@ -38,7 +38,6 @@ npm start
 ## Technologies Used
 
 - **React** (Hooks: useState, useEffect)
-- **Tailwind CSS** for styling
 - **Lucide React** for icons
 - **Open Trivia DB API** for questions
 - **LocalStorage** for leaderboard persistence
