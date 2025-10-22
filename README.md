@@ -47,8 +47,8 @@ npm start
 quiz-game/
 ├── src/
 │   ├── App.js          # Main quiz component
-│   ├── index.js        # Entry point
-│   └── index.css       # Tailwind imports
+│   |─ index.js        # Entry point
+│         
 ├── public/
 ├── package.json
 └── README.md
